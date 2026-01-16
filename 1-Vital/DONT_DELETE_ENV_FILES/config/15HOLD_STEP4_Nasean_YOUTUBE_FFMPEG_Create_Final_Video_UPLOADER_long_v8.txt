@@ -1,0 +1,51 @@
+[DEFAULT] 
+#Change this for the different sections
+#Smartikle Learning
+ROOT_FOLDER=C:/SmartiklePosts/Course_Collective
+SERVICE_ACCOUNT_FILE=os.getenv("SMARTIKLE_WORKBOOK_GOOGLE_CREDENTIALS")
+SHEET_ID=os.getenv("SMARTIKLE_GOOGLE_SHEET_ID")
+WORKSHEET_NAME=G6SEC
+
+
+INPUT_FILE=essay.docx
+AUDIO_FILE=narration.mp3
+VOICE=sage
+TTS_MODEL=tts-1-hd
+TIMESTAMP_FILE=narration_timestamps.txt
+WHISPER_MODEL=base
+MAX_TTS_CHARS=4096
+RETRY_ATTEMPTS=3
+
+REMOVE_HEADING=YES
+REMOVE_SUB_HEADING=YES
+
+size=1024x1024
+style=storybook illustration
+mode=image
+guidance=storybook style, simple and clear, imaginative
+negative_guidance=inaccurate
+append=simple line art, soft details, storybook style
+style_tags=storybook sketch, sepia tones, vintage art, faded edges
+system_msg=You are a Sketch Artist for storybook illustrations. Create prompts for AI-generated scenes. Turn narration into clear, simple scene descriptions a sketch artist could use to draw storybook-style illustrations
+
+# --- Base folders and output structure ---
+SCRIPT_DIR=.
+OUTPUT_FOLDER=output
+IMAGE_FOLDER=output/images
+BACKGROUND_IMAGE=output/background.png
+TEMP_FOLDER=output/segments
+OVERLAID_FOLDER=output/overlaid
+CONCAT_FILE=output/concat_list.txt
+OUTPUT_VIDEO=output/final_video.mp4
+LOG_FILE=output/image2vid.txt
+VIDEO_ONLY=output/video_no_audio.mp4
+
+
+# --- Miscellaneous ---
+FRAME_RATE=30
+VIDEO_CODEC=libx264
+PIX_FMT=yuv420p
+
+
+
+

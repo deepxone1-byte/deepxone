@@ -1,0 +1,27 @@
+[DEFAULT] 
+ROOT_FOLDER=C:/1-Vital/Course_Collective
+SERVICE_ACCOUNT_FILE=smartiklecom-360e60a6ff26.json
+FORMS_SERVICE_ACCOUNT_FILE=smartiklecom-f251b7d29a8e.json
+SHEET_ID=1iuQ53zJSD5b9QtGkEw74RfHHbMLbau0Bliv5r4bsIxs
+
+REMOVE_HEADING=NO
+FIXED_SEGMENT_DURATION = Y
+REMOVE_SUB_HEADING=NO
+MIN_SEGMENT_DURATION_SECONDS = 5
+INPUT_FILE=essay_short.docx
+OUTPUT_FOLDER=output
+AUDIO_FILE=narration_short.mp3
+VOICE=ash
+TTS_MODEL=tts-1-hd
+TIMESTAMP_FILE=narration_timestamps_short.txt
+WHISPER_MODEL=base
+MAX_TTS_CHARS=4096
+RETRY_ATTEMPTS=3
+WORKSHEET_NAME=G6SEC-short
+WP_APP_PASSWORD=addnewarticle123
+WP_SITE=https://smartikle.com/
+# Configuration
+XMLRPC_URL = "https://smartikle.com/xmlrpc.php"  # Replace with your WordPress URL
+WP_USERNAME = "wp_api_bot"                      # Replace with your WP username
+WP_PASSWORD = "qJrWxENwXEqQrMu7LX$v8PVw"      # Replace with your WP password or App Password (if enabled)
+WP_XMLRPC_URL = https://smartikle.com/xmlrpc.php

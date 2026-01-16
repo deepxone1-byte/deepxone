@@ -1,0 +1,74 @@
+# Environment files
+.env
+*.env
+.env.*
+
+# API Keys and secrets
+**/client_secret*.json
+**/credentials*.json
+**/*secret*.json
+token.pickle
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+whisperenv/
+python311/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# Workflow output
+1-Vital/Course_Collective/WED*/
+1-Vital/Course_Collective/*/output/
+workflows/
+*.mp3
+*.mp4
+*.wav
+
+# Database
+*.sql
+*.db
+*.sqlite
+
+# Archives
+*.tar.gz
+*.zip
+
+# IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Project specific
+1-Vital/selected_date.txt
+1-Vital/workflow_params*.json
+cookies.txt
+smartikle.tar.gz
+posts_loaded/
+courses/
+
+# Other projects (if you want to exclude)
+Million_Dollar_Book/
+bruhbot_discord/
+discord/
+mail4mom/

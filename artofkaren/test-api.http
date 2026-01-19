@@ -1,0 +1,179 @@
+### Art of Karen - API Test File
+### Use with REST Client extension in VS Code or similar tools
+
+@baseUrl = http://localhost:3001
+@token = your_token_here
+
+### Health Check
+GET {{baseUrl}}/health
+
+### Register New User
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "newartist@test.com",
+  "password": "password123",
+  "username": "newartist",
+  "full_name": "New Artist Name",
+  "role": "artist"
+}
+
+### Login (Artist)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "karen@artofkaren.com",
+  "password": "artist123"
+}
+
+### Login (Admin)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@artofkaren.com",
+  "password": "admin123"
+}
+
+### Login (Student)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "student@artofkaren.com",
+  "password": "student123"
+}
+
+### Get Profile (requires token)
+GET {{baseUrl}}/api/auth/profile
+Authorization: Bearer {{token}}
+
+### Update Profile
+PUT {{baseUrl}}/api/auth/profile
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "full_name": "Updated Name",
+  "bio": "I am a passionate artist and educator",
+  "website": "https://artofkaren.com"
+}
+
+### Get All Artworks (public)
+GET {{baseUrl}}/api/artworks
+
+### Get Artworks (with pagination)
+GET {{baseUrl}}/api/artworks?page=1&limit=10
+
+### Get Featured Artworks
+GET {{baseUrl}}/api/artworks?is_featured=true
+
+### Get Artworks by User
+GET {{baseUrl}}/api/artworks?user_id=2
+
+### Get Artwork by ID
+GET {{baseUrl}}/api/artworks/1
+
+### Create Artwork (requires multipart/form-data - use Postman or curl)
+# curl -X POST http://localhost:3001/api/artworks \
+#   -H "Authorization: Bearer YOUR_TOKEN" \
+#   -F "image=@path/to/image.jpg" \
+#   -F "title=My Artwork" \
+#   -F "description=Beautiful piece" \
+#   -F "category=Painting" \
+#   -F "tags=[\"portrait\",\"oil\"]" \
+#   -F "is_published=true"
+
+### Update Artwork
+PUT {{baseUrl}}/api/artworks/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Updated Artwork Title",
+  "description": "Updated description",
+  "is_published": true,
+  "is_featured": false
+}
+
+### Delete Artwork
+DELETE {{baseUrl}}/api/artworks/1
+Authorization: Bearer {{token}}
+
+### Get All Blog Posts
+GET {{baseUrl}}/api/blog
+
+### Get Blog Posts (with pagination)
+GET {{baseUrl}}/api/blog?page=1&limit=5
+
+### Get Blog Post by ID
+GET {{baseUrl}}/api/blog/1
+
+### Get Blog Post by Slug
+GET {{baseUrl}}/api/blog/slug/my-first-post-1234567890
+
+### Create Blog Post
+POST {{baseUrl}}/api/blog
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "My First Blog Post",
+  "content": "This is the content of my first blog post. It can be very long with markdown formatting.",
+  "excerpt": "A short excerpt about this post",
+  "is_published": true
+}
+
+### Update Blog Post
+PUT {{baseUrl}}/api/blog/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Updated Blog Title",
+  "content": "Updated content here",
+  "is_published": true
+}
+
+### Delete Blog Post
+DELETE {{baseUrl}}/api/blog/1
+Authorization: Bearer {{token}}
+
+### Get All Videos
+GET {{baseUrl}}/api/videos
+
+### Get Videos by Artwork
+GET {{baseUrl}}/api/videos?artwork_id=1
+
+### Get Video by ID
+GET {{baseUrl}}/api/videos/1
+
+### Create Video
+POST {{baseUrl}}/api/videos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "How I Created This Painting",
+  "description": "Step by step process video",
+  "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "artwork_id": 1,
+  "is_published": true
+}
+
+### Update Video
+PUT {{baseUrl}}/api/videos/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Updated Video Title",
+  "description": "Updated description",
+  "is_published": true
+}
+
+### Delete Video
+DELETE {{baseUrl}}/api/videos/1
+Authorization: Bearer {{token}}

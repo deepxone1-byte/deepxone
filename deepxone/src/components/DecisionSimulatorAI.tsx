@@ -123,7 +123,7 @@ export function DecisionSimulatorAI() {
   useEffect(() => {
     const checkAuth = () => {
       // Check NextAuth session OR localStorage email auth
-      const hasSession = status === 'authenticated' && session?.user
+      const hasSession = status === 'authenticated' && !!session?.user
       const hasLocalAuth = localStorage.getItem('deepxone_user') !== null
       setIsAuthenticated(hasSession || hasLocalAuth)
 

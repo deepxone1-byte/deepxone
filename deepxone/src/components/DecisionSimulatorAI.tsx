@@ -125,7 +125,7 @@ export function DecisionSimulatorAI() {
       // Check NextAuth session OR localStorage email auth
       const hasSession = status === 'authenticated' && !!session?.user
       const hasLocalAuth = localStorage.getItem('deepxone_user') !== null
-      setIsAuthenticated(hasSession || hasLocalAuth)
+      setIsAuthenticated(Boolean(hasSession || hasLocalAuth))
 
       // Get custom scenario count from localStorage
       const count = parseInt(localStorage.getItem('deepxone_custom_count') || '0')

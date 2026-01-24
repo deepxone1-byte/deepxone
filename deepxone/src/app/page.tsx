@@ -1,35 +1,13 @@
 'use client'
 
 import { DecisionSimulatorAI } from '@/components/DecisionSimulatorAI'
-import { Logo } from '@/components/Logo'
-import { ArrowRight, Shield, Zap, CheckCircle2, Phone } from 'lucide-react'
+import { PageLayout } from '@/components/PageLayout'
+import { TrustBadges } from '@/components/TrustBadges'
+import { ArrowRight, Shield, Zap, CheckCircle2 } from 'lucide-react'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      {/* Header */}
-      <header className="border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Logo />
-            <div className="flex items-center gap-6">
-              <a href="tel:+6479488700" className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">647 948 8700</span>
-              </a>
-              <a href="https://cal.com/deep-xone-umqzaq" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1 group">
-                <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=https://cal.com/deep-xone-umqzaq&bgcolor=111827&color=ffffff"
-                  alt="Book a demo"
-                  className="w-12 h-12 rounded"
-                />
-                <span className="text-xs text-text-secondary group-hover:text-primary transition-colors">Book Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <PageLayout>
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center max-w-4xl mx-auto">
@@ -59,7 +37,6 @@ export default function Home() {
         <DecisionSimulatorAI />
       </section>
 
-
       {/* Where It Fits */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-3xl font-bold text-text-primary mb-12 text-center">
@@ -82,26 +59,7 @@ export default function Home() {
       </section>
 
       {/* Security & Trust */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold text-text-primary mb-8 text-center">
-            Security & Trust
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              'No customer data stored in demos',
-              'No training on demo inputs',
-              'Enterprise-ready design',
-              'Human override always available',
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-success flex-shrink-0 mt-1" />
-                <p className="text-text-secondary">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustBadges />
 
       {/* Final CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -115,23 +73,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-800 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <Logo />
-            <div className="text-center md:text-right">
-              <p className="text-text-primary text-sm mb-1">
-                Contact: 647 948 8700
-              </p>
-              <p className="text-text-secondary text-sm">
-                © 2026 DeepXone Decisions™. Control the outcome, not just the output.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </PageLayout>
   )
 }

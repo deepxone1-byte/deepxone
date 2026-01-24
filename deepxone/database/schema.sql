@@ -42,6 +42,27 @@ CREATE TABLE IF NOT EXISTS user_scenarios (
     INDEX idx_created_at (created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Contact form submissions table
+CREATE TABLE IF NOT EXISTS contact_submissions (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    company VARCHAR(255) NOT NULL,
+    phone VARCHAR(50) NULL,
+    project_type VARCHAR(100) NOT NULL,
+    budget_range VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    newsletter_opt_in BOOLEAN DEFAULT FALSE,
+    status ENUM('new', 'contacted', 'qualified', 'closed') DEFAULT 'new',
+    notes TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    INDEX idx_email (email),
+    INDEX idx_status (status),
+    INDEX idx_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Decision history table (optional - for analytics)
 CREATE TABLE IF NOT EXISTS decision_history (
     id INT PRIMARY KEY AUTO_INCREMENT,

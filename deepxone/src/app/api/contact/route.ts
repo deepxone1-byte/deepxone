@@ -9,7 +9,7 @@ interface ContactFormData {
   projectType: string
   budgetRange: string
   message: string
-  newsletter: boolean
+  marketingOptIn: boolean
 }
 
 function validateEmail(email: string): boolean {
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
       projectType: sanitizeString(body.projectType),
       budgetRange: sanitizeString(body.budgetRange),
       message: body.message.trim().slice(0, 5000),
-      newsletter: Boolean(body.newsletter),
+      marketingOptIn: body.marketingOptIn ? 1 : 0,
     }
 
     // Insert into database
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
         sanitizedData.projectType,
         sanitizedData.budgetRange,
         sanitizedData.message,
-        sanitizedData.newsletter,
+        sanitizedData.marketingOptIn,
       ]
     )
 

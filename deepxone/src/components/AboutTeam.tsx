@@ -1,41 +1,48 @@
 'use client'
 
-import { Users } from 'lucide-react'
+import { User } from 'lucide-react'
 
 const team = [
   {
-    name: 'Leadership Team',
-    role: 'Executive',
-    description: 'Decades of combined experience in enterprise AI, software engineering, and business transformation.',
+    name: 'Nade Azeez',
+    role: 'CEO',
+    initials: 'NA',
   },
   {
-    name: 'AI Engineers',
-    role: 'Technical',
-    description: 'Deep expertise in machine learning, natural language processing, and decision systems.',
+    name: 'Sasha Amow',
+    role: 'Manager, Operations',
+    initials: 'SA',
   },
   {
-    name: 'Solution Architects',
-    role: 'Strategy',
-    description: 'Specialists in enterprise integration, scalability, and security best practices.',
+    name: 'John Moss',
+    role: 'DevOps Manager',
+    initials: 'JM',
+  },
+  {
+    name: 'Sharon Faria',
+    role: 'Manager, PMO',
+    initials: 'SF',
   },
 ]
 
 export function AboutTeam() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h2 className="text-3xl font-bold text-text-primary mb-12 text-center">Our Team</h2>
-      <div className="grid md:grid-cols-3 gap-8">
+      <h2 className="text-3xl font-bold text-text-primary mb-4 text-center">Meet the Team</h2>
+      <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
+        The people behind DeepXone driving innovation and delivering results.
+      </p>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {team.map((member, idx) => (
           <div
             key={idx}
-            className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:border-gray-700 transition-colors"
+            className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center hover:border-primary/50 transition-colors group"
           >
-            <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-10 h-10 text-primary" />
+            <div className="w-24 h-24 bg-gradient-to-br from-primary-pink to-primary-purple rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform">
+              <span className="text-2xl font-bold text-white">{member.initials}</span>
             </div>
             <h3 className="text-xl font-semibold text-text-primary mb-1">{member.name}</h3>
-            <p className="text-primary text-sm mb-3">{member.role}</p>
-            <p className="text-text-secondary text-sm">{member.description}</p>
+            <p className="text-primary text-sm">{member.role}</p>
           </div>
         ))}
       </div>

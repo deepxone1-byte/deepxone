@@ -11,7 +11,7 @@ interface FormData {
   projectType: string
   budgetRange: string
   message: string
-  newsletter: boolean
+  marketingOptIn: boolean
 }
 
 const projectTypes = [
@@ -39,7 +39,7 @@ export function ContactForm() {
     projectType: '',
     budgetRange: '',
     message: '',
-    newsletter: false
+    marketingOptIn: false
   })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -81,7 +81,7 @@ export function ContactForm() {
         projectType: '',
         budgetRange: '',
         message: '',
-        newsletter: false
+        marketingOptIn: false
       })
     } catch (error) {
       setStatus('error')
@@ -99,7 +99,7 @@ export function ContactForm() {
         </p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-primary hover:text-blue-400 transition-colors"
+          className="text-primary-pink hover:text-fuchsia-400 transition-colors"
         >
           Submit another inquiry
         </button>
@@ -238,21 +238,21 @@ export function ContactForm() {
       <div className="flex items-start gap-3">
         <input
           type="checkbox"
-          id="newsletter"
-          name="newsletter"
-          checked={formData.newsletter}
+          id="marketingOptIn"
+          name="marketingOptIn"
+          checked={formData.marketingOptIn}
           onChange={handleChange}
           className="mt-1 w-4 h-4 bg-gray-800 border-gray-700 rounded focus:ring-primary"
         />
-        <label htmlFor="newsletter" className="text-text-secondary text-sm">
-          Subscribe to our newsletter for AI insights, industry trends, and company updates.
+        <label htmlFor="marketingOptIn" className="text-text-secondary text-sm">
+          <span className="font-medium text-text-primary">Yes, I want to receive marketing communications</span> including newsletters, AI insights, industry trends, and promotional offers from DeepXone. You can <a href="/unsubscribe" className="text-primary hover:underline">unsubscribe</a> at any time.
         </label>
       </div>
 
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full bg-primary hover:bg-blue-600 disabled:bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 transition-colors"
+        className="w-full bg-gradient-to-r from-primary-pink to-primary-purple hover:from-fuchsia-600 hover:to-purple-600 disabled:from-gray-700 disabled:to-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-fuchsia-500/25 hover:shadow-fuchsia-500/40"
       >
         {status === 'submitting' ? (
           <>

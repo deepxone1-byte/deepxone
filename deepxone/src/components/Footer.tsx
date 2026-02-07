@@ -117,11 +117,11 @@ export function Footer() {
                 <span className="text-sm">647 948 8700</span>
               </a>
               <a
-                href="mailto:contact@deepxone.com"
+                href="mailto:support@deepxone.com"
                 className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span className="text-sm">contact@deepxone.com</span>
+                <span className="text-sm">support@deepxone.com</span>
               </a>
             </div>
             <p className="text-text-secondary text-sm text-center md:text-right">

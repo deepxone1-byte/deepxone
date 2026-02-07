@@ -18,8 +18,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'contact@deepxone.com',
-    href: 'mailto:contact@deepxone.com',
+    content: 'support@deepxone.com',
+    href: 'mailto:support@deepxone.com',
   },
   {
     icon: Clock,

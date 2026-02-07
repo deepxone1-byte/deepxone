@@ -110,7 +110,7 @@ export default function TermsPage() {
             </p>
             <div className="mt-4 text-text-secondary">
               <p>DeepXone Decisions</p>
-              <p>Email: contact@deepxone.com</p>
+              <p>Email: support@deepxone.com</p>
               <p>Phone: 647 948 8700</p>
             </div>
           </section>
